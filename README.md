@@ -86,6 +86,9 @@ func main() { ns := nestedset.NewNestedSet()
     }
 }
 ```
+### Documentation
+
+https://godoc.org/github.com/juggleru/nestedset
 
 ### TODO
 
