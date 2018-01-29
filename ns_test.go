@@ -58,13 +58,13 @@ func createTestNestedSet(t *testing.T) {
 
 func checkNode(t *testing.T, node NodeInterface, level, left, right int) {
 	if node.Level() != level {
-		t.Errorf("Invalid level for node '%ns', expected %d, get %d", node.Name(), right, node.Level())
+		t.Errorf("Invalid level for node '%s', expected %d, get %d", node.Name(), right, node.Level())
 	}
 	if node.Left() != left {
-		t.Errorf("Invalid left for node '%ns', expected %d, get %d", node.Name(), left, node.Left())
+		t.Errorf("Invalid left for node '%s', expected %d, get %d", node.Name(), left, node.Left())
 	}
 	if node.Right() != right {
-		t.Errorf("Invalid right for node '%ns', expected %d, get %d", node.Name(), right, node.Right())
+		t.Errorf("Invalid right for node '%s', expected %d, get %d", node.Name(), right, node.Right())
 	}
 }
 
@@ -92,13 +92,13 @@ func TestNestedSet_Delete(t *testing.T) {
 	}
 
 	if ns.exists(nodes[1]) {
-		t.Fatalf("Error deleting node '%ns'", nodes[0].Name())
+		t.Fatalf("Error deleting node '%s'", nodes[0].Name())
 	}
 	if ns.exists(nodes[2]) {
-		t.Fatalf("Error deleting node '%ns'", nodes[2].Name())
+		t.Fatalf("Error deleting node '%s'", nodes[2].Name())
 	}
 	if ns.exists(nodes[5]) {
-		t.Fatalf("Error deleting node '%ns'", nodes[3].Name())
+		t.Fatalf("Error deleting node '%s'", nodes[3].Name())
 	}
 
 	checkNode(t, nodes[0], 0, 0, 7)
