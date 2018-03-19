@@ -61,7 +61,9 @@ func (t *MySomeType) SetName(name string) {
     t.MyName = name
 }
 
-func main() { ns := nestedset.NewNestedSet()
+func main() { 
+    
+    ns := nestedset.NewNestedSet()
 
     // create 3 new nodes
     node1 := NewMySomeType()
