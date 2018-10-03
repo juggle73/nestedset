@@ -56,7 +56,7 @@ func createTestNestedSet(t *testing.T) {
 
 }
 
-func checkNode(t *testing.T, node NodeInterface, level, left, right int) {
+func checkNode(t *testing.T, node NodeInterface, level, left, right int64) {
 	if node.Level() != level {
 		t.Errorf("Invalid level for node '%s', expected %d, get %d", node.Name(), right, node.Level())
 	}
@@ -138,7 +138,8 @@ func TestNestedSet_Branch(t *testing.T) {
 func printBranch(branch []NodeInterface) {
 
 	for _, n := range branch {
-		for i := 0; i < n.Level(); i++ {
+		var i int64
+		for i = 0; i < n.Level(); i++ {
 			fmt.Print("..")
 		}
 		fmt.Printf("%s lvl:%d, left:%d, right:%d\n", n.Name(), n.Level(), n.Left(), n.Right())

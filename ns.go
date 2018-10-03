@@ -103,7 +103,7 @@ func (sn SortedNodes) Less(i, j int) bool { return sn[i].Left() < sn[j].Left() }
 type NestedSet struct {
 	nodes    []NodeInterface
 	rootNode NodeInterface
-	maxId    int
+	maxId    int64
 	mutex    sync.Mutex
 }
 
@@ -297,7 +297,7 @@ func (s *NestedSet) parent(node NodeInterface) NodeInterface {
 }
 
 // Finds and returns node by id.
-func (s *NestedSet) FindById(id int) NodeInterface {
+func (s *NestedSet) FindById(id int64) NodeInterface {
 
 	s.mutex.Lock()
 	defer s.mutex.Unlock()
